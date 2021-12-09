@@ -1,0 +1,8 @@
+- name: Task 1
+  hosts: targetW1
+  tasks:
+    - name: get boottime of last
+      win_command: systeminfo | find/i "Boot time"
+      register: space
+    - debug:
+        var: space.stdout_lines
